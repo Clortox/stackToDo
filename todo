@@ -1,0 +1,25 @@
+#!/bin/bash
+
+td_push(){
+    tpush $1
+}
+
+td_pop(){
+    notify-send "stackToDo" "Poped $(tpop)"
+}
+
+td_peek(){
+    notify-send "stackToDo" "Top of Stack: $(tpeek)"
+}
+
+#prompt user
+result=$(printf "push\npop\npeek" | dmenu -p "todo >")
+
+cmd=${result%% *}
+
+case $cmd in
+    "push") td_push "$(echo $result | cut -d ' ' -f 2-)";;
+    "pop") td_pop ;;
+    "peek") td_peek ;;
+    *) notify-send "stackToDo" "Invalid command" ;;
+esac

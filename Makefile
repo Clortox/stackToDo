@@ -10,9 +10,13 @@ INSTALL_DIR="$${HOME}/.local/bin"
 #INSTALL_DIR="/usr/bin"
 
 install :
-	cp t* $(INSTALL_DIR)/
+	cp tpeek tpop tpush $(INSTALL_DIR)/
+
+install_dmenu :
+	cp todo $(INSTALL_DIR)/
 
 uninstall :
 	rm $(INSTALL_DIR)/tpeek
 	rm $(INSTALL_DIR)/tpop
 	rm $(INSTALL_DIR)/tpush
+	rm -f $(INSTALL_DIR)/todo
