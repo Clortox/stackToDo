@@ -10,6 +10,8 @@ Install
 
 ```
 make install
+#install dmenu script
+make install_dmenu
 ```
 
 Usage and specifics
@@ -25,3 +27,9 @@ and get back to what you were previously doing. If you ever forget what you
 were doing, simply `peek` at the top of the stack to see what you're doing
 without removing it from the stack. Everything is kept in plaintext, so its
 easy to parse with other programs.
+
+Everything is nicely wrapped up into a dmenu script as well, just call `todo`
+and a dmenu prompt will appear providing you with the `push`, `pop`, and `peek`
+options. The script also uses `notify-send` to let you know about updates to
+your todo-stack. To bind `todo` to a key, see the command `xbindkeys` on your
+distribution.
