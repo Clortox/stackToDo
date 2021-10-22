@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#zero arguments
+if [ "$#" -ne 0 ]; then
+    echo "Usage:" $0
+    echo "Returns what is at the top of the todo stack"
+fi
+
+#make correct directories
+mkdir -p ~/.config/stackToDo
+touch ~/.config/stackToDo/todo
+
+tail -1 ~/.config/stackToDo/todo

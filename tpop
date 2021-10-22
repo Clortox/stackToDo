@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#must have no arguments
+if [ "$#" -ne 0 ]; then
+    echo "Usage:" $0
+    echo "Remove the last element of the stack and prints it"
+    exit 1
+fi
+
+#make correct directories
+mkdir -p ~/.config/stackToDo
+touch ~/.config/stackToDo/todo
+
+tail -1 ~/.config/stackToDo/todo
+sed -i '$ d' ~/.config/stackToDo/todo

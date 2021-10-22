@@ -1,0 +1,6 @@
+#ignore all swp files
+**/*.swp
+
+#ignore all executables, but still keep the bin folder
+bin/*
+!bin/.gitkeep
