@@ -21,5 +21,6 @@ case $cmd in
     "push") td_push "$(echo $result | cut -d ' ' -f 2-)";;
     "pop") td_pop ;;
     "peek") td_peek ;;
-    *) notify-send "stackToDo" "Invalid command" ;;
+    #assume meant to push
+    *) td_push "$result" ;;
 esac
